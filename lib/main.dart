@@ -1,54 +1,127 @@
-// Copyright 2018 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
-import 'package:flutter/material.dart';
+// Imports
+import 'dart:async';
+import 'dart:convert';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
+// Main function - runs the app
 void main() => runApp(MyApp());
 
+// Functions and classes
+
+/*
+  MyApp - Main application
+*/
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Startup Name Generator',
-      theme: ThemeData(
-        primaryColor: Colors.white,
-      ),
-      home: RandomWords(),
+      title: 'Municípios de SP',
+      home: Cidades(),
     );
   }
 }
 
-class RandomWords extends StatefulWidget {
+/*
+  Cidades
+
+    - Previously "RandomWords", from Flutter website tutorial
+*/
+class Cidades extends StatefulWidget {
   @override
-  _RandomWordsState createState() => _RandomWordsState();
+  _CidadesState createState() => _CidadesState();
 }
 
-class _RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final _saved = Set<WordPair>();
+/*
+  _CidadesState
+
+    - Previsouly "_RandomWordsState", from Flutter website tutorial
+    - Fetches city list from 'assets/cidades.txt' instead of package
+    - Show the city list and allows favoritation
+    - Favorite cities can be checked on another screen
+*/
+class _CidadesState extends State<Cidades> {
+  // Styling
   final _biggerFont = TextStyle(fontSize: 18.0);
 
-  Widget _buildSuggestions() {
-    return ListView.builder(
-        padding: EdgeInsets.all(16.0),
-        itemBuilder: (context, i) {
-          if (i.isOdd) return Divider();
+  // This variable will hold the list of favorite cities
+  final _saved = Set<String>();
 
-          final index = i ~/ 2;
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-          return _buildRow(_suggestions[index]);
-        });
+  // This variable will hold the list of cities
+  List<String> _cidades = [];
+
+  /*
+    Method: _loadCidades()
+
+      - Paramenters: none
+      - Returns: list of cities from "assets/cidades.txt"
+  */
+  Future<List<String>> _loadCidades() async {
+    List<String> cidades = [];
+    await rootBundle.loadString('assets/cidades.txt').then((x) {
+      for (String cidade in LineSplitter().convert(x)) {
+        cidades.add(cidade);
+      }
+    });
+    cidades.sort();
+    return cidades;
   }
 
-  Widget _buildRow(WordPair pair) {
-    final alreadySaved = _saved.contains(pair);
+  // The following blocks loads the .txt file and associate with the variable
+  @override
+  void initState() {
+    _setup();
+    super.initState();
+  }
+
+  _setup() async {
+    List<String> cidades = await _loadCidades();
+    setState(() {
+      _cidades = cidades;
+    });
+  }
+
+  /*
+    Widget: _cidadesListar()
+
+      - Shows all the cities from variable "cidades"
+      - Separates each city with a divider
+
+      Notes:
+        Considering there will be a divider between each two cities, the
+        index will go to two times the list total lenght (meaning one
+        divider below each city)... the code as is will clip the last divider 
+  */
+  Widget _cidadesListar() {
+    return ListView.builder(
+      padding: EdgeInsets.all(16.0),
+      itemBuilder: (context, i) {
+        if (i.isOdd && i != (_cidades.length * 2 - 1)) return Divider();
+
+        final index = i ~/ 2;
+
+        if (i == (_cidades.length) * 2 - 1) {
+          return null; // break
+        } else {
+          return _buildRow(_cidades[index]); // print
+        }
+      },
+    );
+  }
+
+  /*
+    Widget: _buildRow()
+
+      - Each row has the city name and a "favorite" button
+  */
+  Widget _buildRow(String cidade) {
+    // Checks if is favorited
+    final alreadySaved = _saved.contains(cidade);
+
     return ListTile(
       title: Text(
-        pair.asPascalCase,
+        cidade,
         style: _biggerFont,
       ),
       trailing: Icon(
@@ -57,20 +130,25 @@ class _RandomWordsState extends State<RandomWords> {
       ),
       onTap: () {
         setState(() {
-          alreadySaved ? _saved.remove(pair) : _saved.add(pair);
+          alreadySaved ? _saved.remove(cidade) : _saved.add(cidade);
         });
       },
     );
   }
 
+  /*
+    Routing: _pushSaved()
+
+      - Will open a new widget on top of screen to show the favorited listing
+  */
   void _pushSaved() {
     Navigator.of(context).push(MaterialPageRoute<void>(
       builder: (BuildContext context) {
         final tiles = _saved.map(
-          (WordPair pair) {
+          (String cidade) {
             return ListTile(
               title: Text(
-                pair.asPascalCase,
+                cidade,
                 style: _biggerFont,
               ),
             );
@@ -84,7 +162,7 @@ class _RandomWordsState extends State<RandomWords> {
 
         return Scaffold(
           appBar: AppBar(
-            title: Text('Saved Suggestions'),
+            title: Text('Municípios Favoritos'),
           ),
           body: ListView(children: divided),
         );
@@ -96,12 +174,12 @@ class _RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Startup Name Generator'),
+        title: Text('Municípios de SP'),
         actions: [
           IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
         ],
       ),
-      body: _buildSuggestions(),
+      body: _cidadesListar(),
     );
   }
 }
