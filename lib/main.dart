@@ -1,6 +1,6 @@
 // Imports
 import 'package:flutter/material.dart';
-import 'cidades.dart';
+import 'cidade/cidades.dart';
 
 // Main function - runs the app
 void main() => runApp(MyApp());

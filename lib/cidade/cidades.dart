@@ -49,6 +49,7 @@ class _CidadesState extends State<Cidades> {
   }
 
   // The following blocks loads the .txt file and associate with the variable
+  // on initialization
   @override
   void initState() {
     _setup();
@@ -84,7 +85,7 @@ class _CidadesState extends State<Cidades> {
         if (i == (_cidades.length) * 2 - 1) {
           return null; // break
         } else {
-          return _buildRow(_cidades[index]); // print
+          return _buildRow(_cidades[index], (index % 2 == 0)); // print
         }
       },
     );
@@ -95,7 +96,7 @@ class _CidadesState extends State<Cidades> {
 
       - Each row has the city name and a "favorite" button
   */
-  Widget _buildRow(String cidade) {
+  Widget _buildRow(String cidade, bool shade) {
     // Checks if is favorited
     final alreadySaved = _saved.contains(cidade);
 
@@ -104,6 +105,7 @@ class _CidadesState extends State<Cidades> {
         cidade,
         style: _biggerFont,
       ),
+      tileColor: (shade ? Colors.grey[300] : null),
       trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: alreadySaved ? Color.fromRGBO(196, 0, 8, 1.0) : null,
@@ -142,7 +144,7 @@ class _CidadesState extends State<Cidades> {
 
         return Scaffold(
           appBar: AppBar(
-            title: Text('Municípios Favoritos'),
+            title: Text('Municípios Favoritados'),
           ),
           body: ListView(children: divided),
         );
@@ -160,7 +162,12 @@ class _CidadesState extends State<Cidades> {
         ),
         title: Text('Municípios de SP'),
         actions: [
-          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
+          IconButton(
+              icon: Icon(
+                Icons.favorite,
+                color: Color.fromRGBO(255, 236, 0, 1.0),
+              ),
+              onPressed: _pushSaved),
         ],
       ),
       body: _cidadesListar(),
