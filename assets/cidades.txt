@@ -36,6 +36,7 @@ Arandu
 Arapeí
 Araraquara
 Araras
+Arco-Íris
 Arealva
 Areias
 Areiópolis
@@ -85,6 +86,8 @@ Borebi
 Botucatu
 Bragança Paulista
 Braúna
+Brejo Alegre
+Brodowski
 Brotas
 Buri
 Buritama
@@ -108,6 +111,7 @@ Campo Limpo Paulista
 Campos do Jordão
 Campos Novos Paulista
 Cananéia
+Canas
 Cândido Mota
 Cândido Rodrigues
 Canitar
@@ -127,6 +131,7 @@ Cerqueira César
 Cerquilho
 Cesário Lange
 Charqueada
+Chavantes
 Clementina
 Colina
 Colômbia
@@ -167,12 +172,14 @@ Emilianópolis
 Engenheiro Coelho
 Espírito Santo do Pinhal
 Espírito Santo do Turvo
-Estrela d'Oeste
+Estiva Gerbi
 Estrela do Norte
+Estrela d'Oeste
 Euclides da Cunha Paulista
 Fartura
-Fernandópolis
 Fernando Prestes
+Fernandópolis
+Fernão
 Ferraz de Vasconcelos
 Flora Rica
 Floreal
@@ -185,6 +192,7 @@ Gabriel Monteiro
 Gália
 Garça
 Gastão Vidigal
+Gavião Peixoto
 General Salgado
 Getulina
 Glicério
@@ -224,15 +232,17 @@ Igaraçu do Tietê
 Igarapava
 Igaratá
 Iguape
-Ilhabela
 Ilha Comprida
 Ilha Solteira
+Ilhabela
 Indaiatuba
 Indiana
 Indiaporã
 Inúbia Paulista
+Ipaussu
 Iperó
 Ipeúna
+Ipiguá
 Iporanga
 Ipuã
 Iracemápolis
@@ -282,6 +292,7 @@ Joanópolis
 João Ramalho
 José Bonifácio
 Júlio Mesquita
+Jumirim
 Jundiaí
 Junqueirópolis
 Juquiá
@@ -325,8 +336,8 @@ Meridiano
 Mesópolis
 Miguelópolis
 Mineiros do Tietê
-Miracatu
 Mira Estrela
+Miracatu
 Mirandópolis
 Mirante do Paranapanema
 Mirassol
@@ -343,12 +354,13 @@ Monte Alto
 Monte Aprazível
 Monte Azul Paulista
 Monte Castelo
-Monteiro Lobato
 Monte Mor
+Monteiro Lobato
 Morro Agudo
 Morungaba
 Motuca
 Murutinga do Sul
+Nantes
 Narandiba
 Natividade da Serra
 Nazaré Paulista
@@ -358,13 +370,14 @@ Nipoã
 Nova Aliança
 Nova Campina
 Nova Canaã Paulista
+Nova Castilho
 Nova Europa
 Nova Granada
 Nova Guataporanga
 Nova Independência
-Novais
 Nova Luzitânia
 Nova Odessa
+Novais
 Novo Horizonte
 Nuporanga
 Ocauçu
@@ -379,6 +392,7 @@ Oscar Bressane
 Osvaldo Cruz
 Ourinhos
 Ouro Verde
+Ouroeste
 Pacaembu
 Palestina
 Palmares Paulista
@@ -397,6 +411,7 @@ Parisi
 Patrocínio Paulista
 Paulicéia
 Paulínia
+Paulistânia
 Paulo de Faria
 Pederneiras
 Pedra Bela
@@ -442,14 +457,17 @@ Porto Feliz
 Porto Ferreira
 Potim
 Potirendaba
+Pracinha
 Pradópolis
 Praia Grande
+Pratânia
 Presidente Alves
 Presidente Bernardes
 Presidente Epitácio
 Presidente Prudente
 Presidente Venceslau
 Promissão
+Quadra
 Quatá
 Queiroz
 Queluz
@@ -466,10 +484,10 @@ Ribeirão Bonito
 Ribeirão Branco
 Ribeirão Corrente
 Ribeirão do Sul
+Ribeirão dos Índios
 Ribeirão Grande
 Ribeirão Pires
 Ribeirão Preto
-Riversul
 Rifaina
 Rincão
 Rinópolis
@@ -477,6 +495,7 @@ Rio Claro
 Rio das Pedras
 Rio Grande da Serra
 Riolândia
+Riversul
 Rosana
 Roseira
 Rubiácea
@@ -498,6 +517,7 @@ Santa Bárbara d'Oeste
 Santa Branca
 Santa Clara d'Oeste
 Santa Cruz da Conceição
+Santa Cruz da Esperança
 Santa Cruz das Palmeiras
 Santa Cruz do Rio Pardo
 Santa Ernestina
@@ -507,11 +527,12 @@ Santa Isabel
 Santa Lúcia
 Santa Maria da Serra
 Santa Mercedes
+Santa Rita do Passa Quatro
+Santa Rita d'Oeste
+Santa Rosa de Viterbo
+Santa Salete
 Santana da Ponte Pensa
 Santana de Parnaíba
-Santa Rita d'Oeste
-Santa Rita do Passa Quatro
-Santa Rosa de Viterbo
 Santo Anastácio
 Santo André
 Santo Antônio da Alegria
@@ -553,8 +574,8 @@ Sarapuí
 Sarutaiá
 Sebastianópolis do Sul
 Serra Azul
-Serrana
 Serra Negra
+Serrana
 Sertãozinho
 Sete Barras
 Severínia
@@ -563,8 +584,8 @@ Socorro
 Sorocaba
 Sud Mennucci
 Sumaré
-Suzano
 Suzanápolis
+Suzano
 Tabapuã
 Tabatinga
 Taboão da Serra
@@ -576,6 +597,7 @@ Tambaú
 Tanabi
 Tapiraí
 Tapiratiba
+Taquaral
 Taquaritinga
 Taquarituba
 Taquarivaí
@@ -590,6 +612,7 @@ Tietê
 Timburi
 Torre de Pedra
 Torrinha
+Trabiju
 Tremembé
 Três Fronteiras
 Tuiuti
@@ -616,30 +639,7 @@ Vera Cruz
 Vinhedo
 Viradouro
 Vista Alegre do Alto
+Vitória Brasil
 Votorantim
 Votuporanga
 Zacarias
-Chavantes
-Estiva Gerbi
-Ouroeste
-Ipiguá
-Arco-Íris
-Brejo Alegre
-Brodowski
-Canas
-Fernão
-Gavião Peixoto
-Ipaussu
-Jumirim
-Nantes
-Nova Castilho
-Paulistânia
-Pracinha
-Pratânia
-Quadra
-Ribeirão dos Índios
-Santa Cruz da Esperança
-Santa Salete
-Taquaral
-Trabiju
-Vitória Brasil
